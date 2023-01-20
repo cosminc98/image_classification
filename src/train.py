@@ -52,6 +52,7 @@ def parse_args():
         help='Learning rate. Lower for more precise updates but possibly '
              'slower convergence.'
     )
+    return parser.parse_args()
 
 def get_transforms(input_size: int):
     # Data augmentation and normalization for training
@@ -297,3 +298,6 @@ def predict(loader, model):
             predictions.extend(pred)
 
     return predictions
+
+if __name__ == '__main__':
+    main(parse_args())
